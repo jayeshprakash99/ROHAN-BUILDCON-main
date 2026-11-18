@@ -20,27 +20,24 @@ const images = {
 
 const testimonialImages = {
   husain:
-    "https://images.pexels.com/photos/9976121/pexels-photo-9976121.jpeg?auto=compress&dpr=1&w=1260",
+    "/images/Hussain Datarwala farmhouse.jpeg",
 
   vaibhav: "/images/Vaibhav Bhargav.JPEG",
 
   murtaza:
-    "https://images.pexels.com/photos/7031607/pexels-photo-7031607.jpeg?auto=compress&dpr=1&w=1260",
+    "/images/Murtaza malik residential.jpeg",
 
   rajendra:
-    "https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg?auto=compress&dpr=1&w=1260",
-
-  anirudh:
-    "https://images.pexels.com/photos/8134820/pexels-photo-8134820.jpeg?auto=compress&dpr=1&w=1260",
+    "/images/Rajendra golcha.jpeg",
 
   mayur:
-    "https://images.pexels.com/photos/10610731/pexels-photo-10610731.jpeg?auto=compress&dpr=1&w=1260",
+    "/images/Mayur jethani.jpeg",
 
   prateek:
-    "https://images.pexels.com/photos/33752181/pexels-photo-33752181/free-photo-of-modern-minimalist-house-with-greenery.jpeg?auto=compress&dpr=1&w=1260",
+    "/images/Prateek yadav.jpeg",
 
-  naveen:
-    "https://images.pexels.com/photos/38877455/pexels-photo-38877455/free-photo-of-modern-commercial-building-with-unique-architecture.jpeg?auto=compress&dpr=1&w=1260",
+  fairdeal:
+    "/images/Fairdeal Group.jpeg",
 };
 
 const testimonials = [
@@ -74,13 +71,6 @@ const testimonials = [
       "I saw the brands on the estimate and the same brands on site. That kind of honesty is rare.",
   },
   {
-    name: "Anirudh Sharma",
-    project: "Residential",
-    image: testimonialImages.anirudh,
-    quote:
-      "The final bill matched the quote. That alone made the whole experience stress-free.",
-  },
-  {
     name: "Mayur Jethani",
     project: "Residential",
     image: testimonialImages.mayur,
@@ -95,10 +85,9 @@ const testimonials = [
       "Our home came out exactly as it was drawn. Guests still ask who built it.",
   },
   {
-    name: "Ar. Naveen Wadhwani",
-    organization: "Fairdeal Group",
+    name: "Fairdeal Group",
     project: "Commercial",
-    image: testimonialImages.naveen,
+    image: testimonialImages.fairdeal,
     quote:
       "A construction partner that respects deadlines and builds to spec. We would work with them again.",
   },
@@ -126,22 +115,18 @@ return (
       <div className="container mx-auto grid gap-12 px-5 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:px-10">
 
         {/* Left image */}
-        <div className="relative">
+        <div className="relative flex min-h-[430px] w-full items-center justify-center bg-gray-50">
           <img
             key={activeIndex}
             src={active.image}
             alt={`${active.name} — ${active.project} project`}
-            className="h-[430px] w-full object-cover transition-opacity duration-500"
+            className="max-h-[550px] w-full object-contain transition-opacity duration-500"
           />
 
           <div className="absolute bottom-5 left-5 bg-[#EF4136] p-5 text-white">
             <div className="flex gap-1">
               {[1, 2, 3, 4, 5].map((i) => (
-                <Star
-                  key={i}
-                  size={13}
-                  fill="currentColor"
-                />
+                <Star key={i} size={13} fill="currentColor" />
               ))}
             </div>
 
@@ -253,8 +238,8 @@ const services = [
   ],
 
   [
-    'Turnkey & Farmhouse',
-    'Hand us the plot and the drawings and get back a finished, ready-to-use space. Ideal for farmhouses, villas and weekend homes.',
+    'Renovation and Expansion',
+    'Additions, extensions and renovations to existing structures, done with minimal disruption to your daily life.',
     Key
   ],
 ]
@@ -320,6 +305,8 @@ I would like to enquire about a project.
 *Phone:* ${formData.phone}
 *Email:* ${formData.email}
 *Project Type:* ${formData.projectType}
+*Built-up Area:* ${formData.builtUpArea}
+*Project Start Timeline:* ${formData.startDate}
 *Project Location:* ${formData.location || 'Not provided'}
 
 *Project Details:*
@@ -526,7 +513,7 @@ Thank you.
   {/* Image */}
   <div className="relative">
     <img
-      src={'images/Shivalaya.JPEG'}
+      src={'images/About Image.jpeg'}
       alt="Luxury custom home built by Rohan Buildcon"
       className="h-[450px] w-full object-contain lg:h-[630px]"
     />
@@ -664,7 +651,7 @@ Thank you.
 
     <section id="process" className="bg-[#003E73] py-24 text-white lg:py-32"><div className="container mx-auto px-5 lg:px-10"><div className="mb-16 max-w-2xl"><p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-[#EF4136]">How we work</p><h2 className="font-serif text-4xl font-bold lg:text-6xl">Clarity at every<br /><span className="text-[#EF4136]">single step.</span></h2></div><div className="grid gap-0 md:grid-cols-4 lg:grid-cols-8">{steps.map((step, i) => <div key={step} className="relative border-l border-white/20 px-5 py-5 first:border-l-0 md:min-h-[180px]"><span className="font-serif text-4xl text-[#EF4136]">0{i + 1}</span><h3 className="mt-8 text-sm font-bold uppercase tracking-wider">{step}</h3>{i < steps.length - 1 && <ArrowRight className="absolute right-3 top-1/2 hidden text-white/30 lg:block" size={18} />}</div>)}</div></div></section>
 
-    <section id="why-us" className="container mx-auto grid gap-12 px-5 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:px-10 lg:py-36"><div><p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-[#EF4136]">The difference</p><h2 className="font-serif text-4xl font-bold text-[#003E73] lg:text-6xl">Built on trust.<br />Proven in detail.</h2><p className="mt-7 max-w-md text-sm leading-7 text-[#1F1F1F]/60">A premium build is not about the loudest promise. It is about the quiet confidence that comes from getting every detail right.</p><a href="#contact" className="mt-8 inline-flex items-center gap-3 bg-[#EF4136] px-6 py-4 text-xs font-bold uppercase tracking-widest text-white hover:bg-[#003E73]">Start a conversation <ArrowRight size={16} /></a></div><div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">{['Branded materials', 'Experienced team', 'On time delivery', '25+ quality checks', 'No hidden charges', 'Modern Technology', 'Dedicated project manager', 'Daily site updates'].map((item, i) => <div key={item} className="flex gap-4 border-b border-[#F2F2F2] pb-6"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F2F2F2] text-[#EF4136]"><Check size={15} /></span><div><span className="font-serif text-xl text-[#003E73]">0{i + 1}</span><h3 className="mt-1 text-sm font-bold text-[#1F1F1F]">{item}</h3></div></div>)}</div></section>
+    <section id="why-us" className="container mx-auto grid gap-12 px-5 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:px-10 lg:py-36"><div><p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-[#EF4136]">The difference</p><h2 className="font-serif text-4xl font-bold text-[#003E73] lg:text-6xl">Built on trust.<br />Proven in detail.</h2><p className="mt-7 max-w-md text-sm leading-7 text-[#1F1F1F]/60">A premium build is not about the loudest promise. It is about the quiet confidence that comes from getting every detail right.</p><a href="#contact" className="mt-8 inline-flex items-center gap-3 bg-[#EF4136] px-6 py-4 text-xs font-bold uppercase tracking-widest text-white hover:bg-[#003E73]">Start a conversation <ArrowRight size={16} /></a></div><div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">{['Branded materials', 'Experienced team', 'On time delivery', '25+ Quality checks', 'No hidden charges', 'Modern Technology', 'Dedicated site supervisor', 'Daily site updates'].map((item, i) => <div key={item} className="flex gap-4 border-b border-[#F2F2F2] pb-6"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F2F2F2] text-[#EF4136]"><Check size={15} /></span><div><span className="font-serif text-xl text-[#003E73]">0{i + 1}</span><h3 className="mt-1 text-sm font-bold text-[#1F1F1F]">{item}</h3></div></div>)}</div></section>
 
     <Testimonials />
 
@@ -740,8 +727,13 @@ Thank you.
             </div>
 
             <div>
-              <label htmlFor="built-up area">Built-up area</label>
-              <select id="built-up area" name="built-up area" required defaultValue="">
+              <label htmlFor="builtUpArea">Built-up area</label>
+              <select
+                id="builtUpArea"
+                name="builtUpArea"
+                required
+                defaultValue=""
+              >
                 <option value="" disabled>Select one</option>
                 <option>Up to 2,000 sq ft</option>
                 <option>2,000 – 5,000 sq ft</option>
@@ -750,8 +742,13 @@ Thank you.
             </div>
 
             <div>
-              <label htmlFor="When do you want to start?">When do you want to start?</label>
-              <select id="startDate" name="startDate" required defaultValue="">
+              <label htmlFor="startDate">When do you want to start?</label>
+              <select
+                id="startDate"
+                name="startDate"
+                required
+                defaultValue=""
+              >
                 <option value="" disabled>Select one</option>
                 <option>Immediately</option>
                 <option>Within 3 months</option>
@@ -803,31 +800,31 @@ Thank you.
         <div className="mt-16 lg:mt-24">
           <div className="mb-6 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
             <div>
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-[#EF4136]">
-                  Find us
-                </p>
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-[#EF4136]">
+                Find us
+              </p>
 
-                <div className="flex items-center gap-3">
-                  <MapPin size={28} className="shrink-0 text-[#EF4136]" />
-                  <h3 className="font-serif text-3xl font-bold text-[#003E73]">
-                    Rohan Buildcon
-                  </h3>
-                </div>
+              <div className="flex items-center gap-3">
+                <MapPin size={28} className="shrink-0 text-[#EF4136]" />
+                <h3 className="font-serif text-3xl font-bold text-[#003E73]">
+                  Rohan Buildcon
+                </h3>
               </div>
-
-              <a
-                href="https://maps.app.goo.gl/fyAVC7ggAhREqKzX6?g_st=ic"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-bold text-[#003E73] transition hover:text-[#EF4136]"
-              >
-                Get Directions ↗
-              </a>
             </div>
+
+            <a
+              href="https://maps.app.goo.gl/EPx9oXE5aNYJCqTPA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-bold text-[#003E73] transition hover:text-[#EF4136]"
+            >
+              Get Directions ↗
+            </a>
+          </div>
 
           <div className="h-[320px] w-full overflow-hidden rounded-xl border border-[#F2F2F2] sm:h-[400px] lg:h-[450px]">
             <iframe
-              src="https://maps.google.com/maps?q=60%20Prakash%20Nagar%20Rd%2C%20Navlakha%2C%20Indore%2C%20Madhya%20Pradesh%20452001&z=16&output=embed"
+              src="https://maps.google.com/maps?q=22.6965468,75.8805124&z=17&output=embed"
               title="Rohan Buildcon Office Location"
               width="100%"
               height="100%"
@@ -838,6 +835,7 @@ Thank you.
             />
           </div>
         </div>
+
       </div>
     </section>
 
